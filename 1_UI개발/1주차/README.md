@@ -21,7 +21,7 @@
     <div class="skip_navigation">
         <a href="#gnb">메인메뉴 바로가기</a>
         <a href="#mainContent">본문 바로가기</a>
-</div>
+    </div>
 ```
 
 
@@ -29,30 +29,59 @@
 
 
 ```css
-.skip_navigation {
-    width: 100%;
-    position: absolute;
-    z-index: 9999;
-}
-.skip_navigation > a {
-    width: 100%;
-    background: #e4e4e4;
-    color: #000000;
-    text-align: center;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: -50px;
-}
-.skip_navigation > a:active,
-.skip_navigation > a:focus {
-    top: 0px;
-}
+    .skip_navigation {
+        width: 100%;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    .skip_navigation > a {
+        width: 100%;
+        background: #e4e4e4;
+        color: #000000;
+        text-align: center;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -50px;
+    }
+
+    .skip_navigation > a:active,
+    .skip_navigation > a:focus {
+        top: 0px;
+    }
 ```
 
 
 사이트에 처음 들어와서 tab을 했을 때 css로 숨겨져 있던 Skip Navigation 이 나타나 링크를 따라 이동할 수 있다.
 
 
-### 📗 2주차 피드백
+### 📗 과제 피드백
 
+
+1주차에 제출한 과제에 대한 피드백을 받았다.  
+소중한 피드백 중에 몇가지를 기록하고자 한다.
+
+
+1. 클래스명에 대쉬 사용
+클래스명에 대쉬 대신 언더바를 사용하면 마우스 더블클릭을 하거나 똑같은 클래스명을 이동을 하여 선택할 때 한번에 선택할 수 있다.  
+이 부분은 개인의 재량이지만 만약에 대쉬를 사용하면 협업을 할 때 불편할 수도 있는 부분이 생길 수도 있지 않을까 생각이 들었다.  
+물론 회사마다 네이밍 컨벤션이 다르겠지만 우선 앞으로 언더바를 사용하기로 했다.
+
+
+2. 너무 상세한 클래스명
+css에서 클래스명을 어떻게 표현을 해야할지 매번 고민되고 어려운 부분이었다.
+비교적 상세하게 적는 편인데 같은 클래스명이 두번 이상 들어가게 하지 않는 연습이 필요할 것 같다.
+
+
+3. 사용자에게 필요한 이미지
+이미지가 들어가는 모든 부분에 img 태그를 썼다. 웹접근성을 고려해야한다고 생각하여 모든 아이콘에도 img 태그를 넣었다.  
+하지만 사용자에게 꼭 필요한 이미지인지를 판단하는 것이 중요했다.
+아이콘 같은 이미지는 디자인적인 부분이기 때문에 꼭 사용자에게 보여질 정보가 아니기 때문에 css에서 이미지로 처리하는 것이 좋다는 피드백을 받았다.  
+그래서 아이콘 img 태그를 삭제하고 css의 background-image로 처리했다.
+
+
+4. 내부 텍스트
+햄버거 메뉴의 토글 같은 버튼을 button 태그 안에 3개의 빈 span 태그를 넣어서 작성했는데, 이렇게 작성할 경우 단순히 디자인을 옮기기 위한 마크업이라는 피드백을 받았다.
+button 태그 같은 경우 tab 키로 이동시 focus가 되는 태그이기 때문에 이 버튼이 무슨 버튼인지 텍스트로 얘기해주지 않으면 안되는 것이었다.
+tab-index 속성으로 포커스를 줄 수 있지만 초기에 마크업을 잘해놓는 것이 좋을 것 같다고 생각이 들었다.
